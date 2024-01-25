@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "flysh": "^1.1.4"
+    "flysh": "^1.1.5"
   }
 }
