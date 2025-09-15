@@ -1,21 +1,35 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var flysh_1 = require("flysh");
-// let IM = new InputMessage('.','/test.html');
-// IM.addFilterSelector("table tr td")
-//     .addField('prod','td','')
-//     .addField('brol1','td','')
-//     .addField('brol2','td','');
-var IM = new flysh_1.InputMessage('https://cserv.be', '/soft/index_0.html');
+/**
+ * Target file is test.html
+ *
+ * The file contains a table with 3 columns and 4 rows (including header)
+ */
+var IM = new flysh_1.InputMessage('.', '/test.html');
+/**
+ * Define the filter selector and fields to be extracted
+ */
 IM.addFilterSelector("table tr td")
-    .addField('field_1', 'td', '')
-    .addField('field_2', 'td', '')
-    .addField('field_3', 'td', '');
+    .addField('site', 'td', '')
+    .addField('youtube', 'td', '')
+    .addField('apps', 'td', '');
 console.log(flysh_1.IOMessageMapper.toJSON(IM));
 /**
- * todo create a cserv.be/test/page.html for distant tests
+ * Create the Flysh instance and run the process
  */
 var flyshInstance = new flysh_1.Flysh(IM);
+/**
+ * Run the instance and print the results
+ * The expected output is:
+ * Pages/Total of Records [1, 3]
+ * Integrity Check : true
+ * { site: 'Site', youtube: 'Youtube', apps: 'Apps' }
+ * { site: 'Site 1', youtube: 'Youtube 1', apps: 'Apps 1' }
+ * { site: 'Site 2', youtube: 'Youtube 2', apps: 'Apps 2' }
+ *
+ * ### End of process ###
+ */
 flyshInstance.run().then(function (results) {
     console.log('Pages/Total of Records [' + results.numberOfPages + ', '
         + results.numberOfRecords + ']'

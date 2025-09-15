@@ -1,15 +1,17 @@
 {
-  "name": "flysh-scratch",
-  "version": "1.0.0",
-  "description": "",
+  "name": "flysh-example",
+  "version": "1.0.1",
+  "description": "project that simply shows how to use flysh library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "run" : "tsc index.ts && node index.js"
   },
-  "author": "",
+  "author": "John Van Derton",
   "license": "ISC",
   "dependencies": {
-    "flysh": "^1.1.4"
+    "flysh": "^1.2.0",
+    "typescript": "^5.2.2",
+    "@types/node": "^24.4.0",
+    "ts-node": "^10.9.1"
   }
 }
