@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var flysh_1 = require("flysh");
-<<<<<<< HEAD
 /**
  * Target file is test.html
  *
@@ -15,31 +14,13 @@ IM.addFilterSelector("table tr td")
     .addField('site', 'td', '')
     .addField('youtube', 'td', '')
     .addField('apps', 'td', '');
-=======
-let IM = new InputMessage('.','/test.html');
-
-IM.addFilterSelector("table tr td")
-     .addField('prod','td','')
-     .addField('brol1','td','')
-     .addField('brol2','td','');
-
->>>>>>> eed720707c3ed553257c72bdbe6182ea229e556b
 console.log(flysh_1.IOMessageMapper.toJSON(IM));
-
 /**
  * Create the Flysh instance and run the process
  */
 var flyshInstance = new flysh_1.Flysh(IM);
 /**
  * Run the instance and print the results
- * The expected output is:
- * Pages/Total of Records [1, 3]
- * Integrity Check : true
- * { site: 'Site', youtube: 'Youtube', apps: 'Apps' }
- * { site: 'Site 1', youtube: 'Youtube 1', apps: 'Apps 1' }
- * { site: 'Site 2', youtube: 'Youtube 2', apps: 'Apps 2' }
- *
- * ### End of process ###
  */
 flyshInstance.run().then(function (results) {
     console.log('Pages/Total of Records [' + results.numberOfPages + ', '
