@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var flysh_1 = require("flysh");
+<<<<<<< HEAD
 /**
  * Target file is test.html
  *
@@ -14,7 +15,17 @@ IM.addFilterSelector("table tr td")
     .addField('site', 'td', '')
     .addField('youtube', 'td', '')
     .addField('apps', 'td', '');
+=======
+let IM = new InputMessage('.','/test.html');
+
+IM.addFilterSelector("table tr td")
+     .addField('prod','td','')
+     .addField('brol1','td','')
+     .addField('brol2','td','');
+
+>>>>>>> eed720707c3ed553257c72bdbe6182ea229e556b
 console.log(flysh_1.IOMessageMapper.toJSON(IM));
+
 /**
  * Create the Flysh instance and run the process
  */

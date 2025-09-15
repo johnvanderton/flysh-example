@@ -1,5 +1,6 @@
 import { Flysh, IOMessageMapper, InputMessage, PageRecords } from "flysh";
 
+<<<<<<< HEAD
 /**
  * Target file is test.html
  * 
@@ -14,6 +15,13 @@ IM.addFilterSelector("table tr td")
     .addField('site','td','')
     .addField('youtube','td','')
     .addField('apps','td','');
+=======
+ let IM = new InputMessage('.','/test.html');
+ IM.addFilterSelector("table tr td")
+     .addField('field_1','td','')
+     .addField('field_2','td','')
+     .addField('field_3','td','');
+>>>>>>> eed720707c3ed553257c72bdbe6182ea229e556b
 
 console.log(IOMessageMapper.toJSON(IM));
 
